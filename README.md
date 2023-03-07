@@ -23,8 +23,8 @@ Cms website ini saya bangun sendiri dengan bahasa pemrogramman PHP dengan menggu
 
 # Untuk instalasi lengkap 
 Silahkan buka situs https://github.com/dafidalfian/cms-blog-laravel-versi-8
-untuk petunjuk installasi
-Setelah mendownload file project nya anda harus mengetikan perintah di bawah ini
+dan ekstrak ke folder yang di inginkan untuk petunjuk installasi
+Setelah mendownload file project nya dan sudah di ekstrak maka anda harus mengetikan perintah di bawah ini
 ```bash
 composer install
 ``` 
