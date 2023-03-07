@@ -35,17 +35,22 @@ ketikkan perintah:
 ```bash
 php artisan key:generate ( jika di perlukan )
 ```
+buka Command Line Interface atau CMD (Command Prompt) dan arahkan folder dari file website tersebut
+setelah itu ketikkan perintah:
+```bash
+php artisan serve
+```
 telakhir buka web browser dan ketikkan alamat URL dengan: http://localhost:8000
 setelah url berhasil diakses anda juga bisa login ke dashboard system, untuk data login seperti dibawah
 
 # Username & Password
-- Halaman Login http://localhost/webcompnay-achmadilandscapesejahtera-versi-7-POS/login
+- Halaman Login http://localhost:8000/login
 - Login type akun Administrator:
 - Username/email: sdwi02467@gmail.com
 - Password: sdwi02467@gmail.com
 
 # Username & Password
-- Halaman Login http://localhost/webcompnay-achmadilandscapesejahtera-versi-7-POS/login
+- Halaman Login http://localhost:8000/login
 - Login type akun Penulis:
 - Username/email: bagasmuzaky06@gmail.com
 - Password: 12345678
