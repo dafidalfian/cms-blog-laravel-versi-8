@@ -15,8 +15,9 @@ Cms website ini saya bangun sendiri dengan bahasa pemrogramman PHP dengan menggu
 # Informasi pembuat Hubungi:
 - Nama= Dafid Alfian
 - Email:
-- sdwi02467@gmail.com
-- id.dafidalfian@gmail.com
+    i sdwi02467@gmail.com
+- * id.dafidalfian@gmail.com
+- ko
 - No-Whatsapp:
 - 083854039128
 - Instagram = xdark_404
