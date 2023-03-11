@@ -68,7 +68,14 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('dashboard/postingan/trash/rest/{posts}', [App\Http\Controllers\PostinganController::class,'kembalikan_postingan']);
 	Route::delete('dashboard/postingan/trash/rest/{posts}',[App\Http\Controllers\PostinganController::class,'hapus_permanen']);
 	// User Management
-	Route::resource('/dashboard/user',UserController::class)->middleware('admin');
+	
+	Route::get('dashboard/user',[UserController::class,'index']);
+	Route::get('dashboard/user/create',[UserController::class,'create']);
+	Route::post('dashboard/user',[UserController::class,'store']);
+	Route::get('dashboard/user/edit/{user}',[UserController::class,'edit']);
+	Route::patch('dashboard/user/{user}',[UserController::class,'update']);
+	Route::delete('dashboard/user/{user}',[UserController::class,'destroy']);
+
 	Route::get('dashboard/pengaturan',[PengaturanController::class,'index']);
 });
 // User Management

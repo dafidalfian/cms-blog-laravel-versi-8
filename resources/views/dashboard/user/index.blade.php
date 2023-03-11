@@ -36,7 +36,9 @@
 							@foreach($data_user as $hasil)
 								<tr>
 									<td>{{$hasil->id}}</td>
-									<td></td>
+									<td>
+										<img src="{{asset('storage/'.$hasil->foto_pengguna)}}" class="card-img-top">
+									</td>
 									<td>{{$hasil->nama}}</td>
 									<td>{{$hasil->username}}</td>
 									<td>{{$hasil->email}}</td>
@@ -52,7 +54,8 @@
 										<form method="post" action="{{url('dashboard/user/'.$hasil->id)}}">
 											@csrf
 											@method('delete')
-											<a href="{{url('dashboard/user/'.$hasil->id. '/edit')}}" class="btn btn-primary">edit</a>
+											<input type="hidden" name="{{$hasil->foto_pengguna}}">
+											<a href="{{url('dashboard/user/edit/'.$hasil->id)}}" class="btn btn-primary">edit</a>
 											<button type="submit" class="btn btn-danger">hapus</button>
 										</form>
 									</td>
