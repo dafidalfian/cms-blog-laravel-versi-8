@@ -45,32 +45,31 @@ class UserController extends Controller
     	User::create($validate_data_user);
     	return redirect('/dashboard/user')->with('success','Data user berhasil di tambahkan!');
     }
-    public function edit($id)
+    public function edit(User $user)
     {
-        $data_edit = User::find($id);
-        return view('dashboard.user.edit', compact('data_edit'));
+        return view('dashboard.user.edit', compact('user'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        // 
-        $validate_data_user_edit = $request->validate([
-            'nama' => 'required|min:2|max:100',
-            'username' => 'required|min:5|max:20|unique:users',
-            'email' => 'required|email:dns|unique:users',
-            'tipe_akun' => 'required'
-            
-        ]);
+        //
+        $validasi = [
+            'nama' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'tipe_akun' => 'required',
+            'password' => 'required'
+        ];
+
+        $validateData = $request->validate($validasi);
+
         if($request->file('foto_pengguna')){
-            $validate_data_user_edit['foto_pengguna'] = $request->file('foto_pengguna')->store('profile');
+            if($request->foto_baru){
+                Storage::delete($request->foto_baru);
+            }
+            $validateData['foto_pengguna'] = $request->file('foto_pengguna')->store('profile');
         }
 
-        if($request->password){
-            $validate_data_user['password'] = bcrypt($request->password);
-        } else {
-            $validate_data_user['password'] = bcrypt($request->email);
-        }
-        $user = User::find($id);
-        $user->update($validate_data_user_edit);
+        User::where('id', $user->id)->update($validateData);
         return redirect('dashboard/user')->with('success','Data user berhasil diperbarui!');
 
     }

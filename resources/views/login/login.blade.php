@@ -66,7 +66,7 @@
                 </a>
               </div>
               <div class="col-6">
-                <a class="btn btn-block btn-social btn-primary" href="#">
+                <a class="btn btn-block btn-social btn-primary" href="{{route('facebook.login')}}">
                   <span class="fab fa-twitter"></span> Facebook
                 </a>                                
               </div>

@@ -37,7 +37,7 @@
 								<tr>
 									<td>{{$hasil->id}}</td>
 									<td>
-										<img src="{{asset('storage/'.$hasil->foto_pengguna)}}" class="card-img-top">
+										<img src="{{asset('storage/'.$hasil->foto_pengguna)}}" class="card-img-top img-thumbnail bg-secondary m-1" style="width: 100px; height: 100px;">
 									</td>
 									<td>{{$hasil->nama}}</td>
 									<td>{{$hasil->username}}</td>
@@ -51,13 +51,13 @@
 										@endif
 									</td>
 									<td>
-										<form method="post" action="{{url('dashboard/user/'.$hasil->id)}}">
-											@csrf
-											@method('delete')
-											<input type="hidden" name="{{$hasil->foto_pengguna}}">
-											<a href="{{url('dashboard/user/edit/'.$hasil->id)}}" class="btn btn-primary">edit</a>
-											<button type="submit" class="btn btn-danger">hapus</button>
-										</form>
+									<form method="post" action="{{url('dashboard/user/'.$hasil->id)}}">
+										@csrf
+										@method('delete')
+										<input type="hidden" name="{{$hasil->foto_pengguna}}">
+										<a href="/dashboard/user/{{$hasil->id}}/edit" class="btn btn-primary">edit</a>
+										<button type="submit" onclick="return confirm('Yakin hapus?')" class="btn btn-danger">hapus</button>
+									</form>
 									</td>
 								</tr>
 							@endforeach

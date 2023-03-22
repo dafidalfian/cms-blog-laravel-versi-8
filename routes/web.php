@@ -35,10 +35,16 @@ Route::post('/logout',[LoginController::class,'logout']);
 // Register
 Route::get('/register',[RegisterController::class,'index'])->middleware('guest');
 Route::post('/register',[RegisterController::class,'store']);
+Route::get('/registrasi/accounts/verifikasi/{verify_key}',[RegisterController::class,'verify']);
+
 
 // Login dengan google
 Route::get('auth/google',[GoogleController::class,'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback',[GoogleController::class,'handleCallback'])->name('google.callback');
+
+// Login dengan facebook
+Route::get('auth/facebook', [FacebookController::class,'redirect_facebook'])->name('facebook.login');
+Route::get('auth/facebook/callback',[FacebookController::class,'handlefacebook'])->name('facebook.callback');
 
 Route::group(['middleware' => 'auth'], function(){
 	// Dashboard
@@ -68,17 +74,32 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('dashboard/postingan/trash/rest/{posts}', [App\Http\Controllers\PostinganController::class,'kembalikan_postingan']);
 	Route::delete('dashboard/postingan/trash/rest/{posts}',[App\Http\Controllers\PostinganController::class,'hapus_permanen']);
 	// User Management
-	
 	Route::get('dashboard/user',[UserController::class,'index']);
 	Route::get('dashboard/user/create',[UserController::class,'create']);
 	Route::post('dashboard/user',[UserController::class,'store']);
-	Route::get('dashboard/user/edit/{user}',[UserController::class,'edit']);
+	Route::get('dashboard/user/{user}/edit',[UserController::class,'edit']);
 	Route::patch('dashboard/user/{user}',[UserController::class,'update']);
 	Route::delete('dashboard/user/{user}',[UserController::class,'destroy']);
+	
+	
 
 	Route::get('dashboard/pengaturan',[PengaturanController::class,'index']);
 });
+
+
+
+
+
+
+
 // User Management
+	// Route::get('dashboard/user',[UserController::class,'index']);
+	// Route::get('dashboard/user/create',[UserController::class,'create']);
+	// Route::post('dashboard/user',[UserController::class,'store']);
+	// Route::get('dashboard/user/edit/{id}',[UserController::class,'edit']);
+	// Route::patch('dashboard/user/{id}',[UserController::class,'update']);
+	// Route::delete('dashboard/user/{id}',[UserController::class,'destroy']);
+
 // Route::get('/dashboard/user',[UserController::class,'index'])->middleware('auth');
 // Route::get('/dashboard/user/create',[UserController::class,'create']);
 // Route::post('/dashboard/user',[UserController::class,'store']);

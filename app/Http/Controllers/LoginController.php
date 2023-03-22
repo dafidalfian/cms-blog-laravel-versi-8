@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -12,18 +15,31 @@ class LoginController extends Controller
     {
     	return view('login.login');
     }
-    public function cek_login(Request $request)
+
+
+    public function cek_login(Request $request, User $user)
     {
-    	$cek_data = $request->validate([
-    		'email' => 'required|email:dns',
-    		'password' => 'required'
-    	]);
-    	if(Auth::attempt($cek_data)){
-    		$request->session()->regenerate();
-    		return redirect()->intended('/dashboard');
-    	}
-    	return back()->with('login_gagal','Login gagal !');
+        $cek_data = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
+
+        $user = User::where('email', $cek_data['email'])->first();
+
+        if($user && Hash::check($cek_data['password'], $user->password)) {
+            if($user->email_verified_at !== null) {
+                Auth::login($user);
+                $request->session()->regenerate();
+                return redirect()->intended('/dashboard');
+            } else {
+                return view('batas');
+            }
+        }
+
+        return back()->with('login_gagal','Login gagal !');
     }
+    
+
     public function logout()
     {
         Auth::logout();

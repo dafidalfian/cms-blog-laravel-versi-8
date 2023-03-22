@@ -12,6 +12,15 @@
   <body>
     <form class="form-signin" method="post" action="/register">
       @csrf
+
+      @if(session('success'))
+      <div class="alert alert-success">
+        <h4>{{session('success')}}</h4>
+        <hr class="mb-0">
+        <p class="mb-0">Cek email anda untuk verifikasi akun !</p>
+      </div>
+      @endif
+
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Register CMS LARAVEL8</h1>
       </div>
