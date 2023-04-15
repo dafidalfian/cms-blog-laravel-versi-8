@@ -4,9 +4,6 @@ $("#swal-1").click(function() {
 	swal('Hello');
 });
 
-$("#swal-2").click(function() {
-	swal('Good Job', 'You clicked the button!', 'success');
-});
 
 $("#swal-3").click(function() {
 	swal('Good Job', 'You clicked the button!', 'warning');
@@ -18,6 +15,10 @@ $("#swal-4").click(function() {
 
 $("#swal-5").click(function() {
 	swal('Good Job', 'You clicked the button!', 'error');
+});
+
+$("#swal-2").click(function() {
+  swal('Absen Berhasil', 'Dafid Alfian', 'success');
 });
 
 $("#swal-6").click(function() {

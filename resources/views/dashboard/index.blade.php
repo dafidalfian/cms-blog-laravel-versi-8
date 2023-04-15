@@ -1,5 +1,18 @@
 @extends('backend.head')
 @section('isi')
+
+
+<!--  -->
+  <div class="col-12 col-sm-6 col-lg-3">
+  <div class="card">
+    <div class="card-body text-center">
+      <div class="mb-2">Success Message</div>
+      <button class="btn btn-primary" id="swal-2">Launch</button>
+    </div>
+  </div>
+  </div>
+<!--  -->
+
 <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">

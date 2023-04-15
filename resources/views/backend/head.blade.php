@@ -19,21 +19,23 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/components.css')}}">
+  @stack('file_css')
 <!-- Start GA -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-<script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script> -->
+<!-- <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-94034622-3');
-</script>
-<!-- /END GA --></head>
+</script> -->
+<!-- /END GA -->
+</head>
 
 <body>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
+      <div class="navbar-bg bg-dark"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">

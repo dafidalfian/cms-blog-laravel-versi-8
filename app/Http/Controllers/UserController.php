@@ -28,6 +28,9 @@ class UserController extends Controller
     		
     	]);
 
+        // $validate_data_user['email_verified_at'] = now();
+        $validate_data_user['email_verified_at'] = \Carbon\Carbon::now();
+
     	// $validate_data_user['password'] = bcrypt($request->email);
         if($request->file('foto_pengguna')){
             $validate_data_user['foto_pengguna'] = $request->file('foto_pengguna')->store('profile');
@@ -73,9 +76,20 @@ class UserController extends Controller
         return redirect('dashboard/user')->with('success','Data user berhasil diperbarui!');
 
     }
-    public function destroy($id)
+    public function destroy(User $user)
     {
-    	$temper_data = User::find($id)->delete();
+        if($user->foto_pengguna){
+            Storage::delete($user->foto_pengguna);
+        }
+        User::destroy($user->id);
     	return back()->with('hapus','User berhasil di hapus');
     }
+
+    public function deleteMultiple(Request $request)
+{
+    $ids = $request->input('id');
+    User::whereIn('id', $ids)->delete();
+    return redirect()->back()->with('success', 'Data berhasil dihapus');
+}
+
 }

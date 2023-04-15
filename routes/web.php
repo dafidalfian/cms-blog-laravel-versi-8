@@ -80,6 +80,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('dashboard/user/{user}/edit',[UserController::class,'edit']);
 	Route::patch('dashboard/user/{user}',[UserController::class,'update']);
 	Route::delete('dashboard/user/{user}',[UserController::class,'destroy']);
+	Route::delete('/dashboard/user/delete-multiple', [UserController::class, 'deleteMultiple'])->name('user.delete-multiple');
 	
 	
 

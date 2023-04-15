@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Mar 2023 pada 21.48
+-- Waktu pembuatan: 15 Apr 2023 pada 13.54
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -81,7 +81,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2023_02_16_201939_add_user_id_to_posts_table', 1),
 (11, '2023_02_26_190853_add_googleid_to_users_table', 1),
 (12, '2023_02_27_183912_add_facebook_id_to_users_table', 1),
-(13, '2023_03_06_201815_create_pengaturan_table', 1);
+(13, '2023_03_06_201815_create_pengaturan_table', 1),
+(14, '2023_03_06_211155_add_foto_profile_to_users_table', 1),
+(15, '2023_03_15_214559_add_fitur_email_to_users', 1);
 
 -- --------------------------------------------------------
 
@@ -164,7 +166,9 @@ CREATE TABLE `tags` (
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `verify_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` tinyint(1) DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -173,16 +177,17 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `tipe_akun` tinyint(1) NOT NULL DEFAULT 0,
   `id_google` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `facebook_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto_pengguna` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `nama`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `tipe_akun`, `id_google`, `facebook_id`) VALUES
-(1, 'Dafid Alfian', NULL, 'sdwi02467@gmail.com', NULL, '$2y$10$a72M7CYtguMVWp9MhXTYyO4YwucI238mLCgldh8mY13vphUWFJOL2', NULL, '2023-03-06 13:46:38', '2023-03-06 13:46:38', 1, '116594077536669847695', NULL),
-(2, 'bagas muzaky', 'mas bagas', 'bagasmuzaky06@gmail.com', NULL, '$2y$10$Jk6tTr3lT5BCyAsH.OJ.OeGHXm6b9kxVww29k2es6vLdCnKv3MA.O', NULL, '2023-03-06 13:47:34', '2023-03-06 13:47:34', 0, NULL, NULL);
+INSERT INTO `users` (`id`, `nama`, `verify_key`, `username`, `active`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `tipe_akun`, `id_google`, `facebook_id`, `foto_pengguna`) VALUES
+(1, 'Dafid Alfian', NULL, NULL, NULL, 'sdwi02467@gmail.com', NULL, '$2y$10$x7K7rqAnvSdWslNLt1f1wuhh3QlF4S8TD3b94n4Q8.rfI.eKtIzau', NULL, '2023-04-15 04:51:41', '2023-04-15 04:51:41', 1, '116594077536669847695', NULL, 'profile/116594077536669847695.jpg'),
+(2, 'Bagas Muzaky', NULL, 'masbagas', NULL, 'bagasmuzaky@gmail.com', '2023-04-15 04:53:52', '$2y$10$zhXD6dYcCtYiiHBisUFluOBmm3AAgqghdM0nTRPZok9Pvv5Fvb3za', NULL, '2023-04-15 04:53:52', '2023-04-15 04:53:52', 0, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -264,7 +269,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengaturan`
