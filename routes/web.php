@@ -85,6 +85,7 @@ Route::group(['middleware' => 'auth'], function(){
 	
 
 	Route::get('dashboard/pengaturan',[PengaturanController::class,'index']);
+	Route::post('dashboard/pengaturan/{id}', [PengaturanController::class,'ubah']);
 });
 
 

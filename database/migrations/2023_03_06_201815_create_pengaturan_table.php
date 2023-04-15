@@ -15,6 +15,9 @@ class CreatePengaturanTable extends Migration
     {
         Schema::create('pengaturan', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_situs');
+            $table->text('deskripsi_situs')->nullable();
+            $table->string('icon_situs')->nullable();
             $table->timestamps();
         });
     }
