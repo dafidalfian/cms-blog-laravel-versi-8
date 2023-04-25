@@ -85,11 +85,4 @@ class UserController extends Controller
     	return back()->with('hapus','User berhasil di hapus');
     }
 
-    public function deleteMultiple(Request $request)
-{
-    $ids = $request->input('id');
-    User::whereIn('id', $ids)->delete();
-    return redirect()->back()->with('success', 'Data berhasil dihapus');
-}
-
 }

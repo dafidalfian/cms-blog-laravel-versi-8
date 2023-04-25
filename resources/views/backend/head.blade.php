@@ -256,7 +256,11 @@
           <div class="section-header">
             <h1>Dashboard</h1>
           </div>
+          @if(Auth::user()->email_verified_at === null)
+            <p class="text-center">Akun Anda belum terverifikasi <a href="" class="text-white badge badge-danger">klik</a> untuk aktivasi akun.</p>
+          @endif
           @yield('isi')
         </section>
       </div>
       @include('backend.footer')
+      @include('sweetalert::alert')

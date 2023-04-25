@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Tags;
+use RealRashid\SweetAlert\Facades\Alert;
+use Session;
 
 class TagController extends Controller
 {
@@ -25,7 +27,8 @@ class TagController extends Controller
     		'slug' => Str::slug($request->nama_tag),
     		'deskripsi' => $request->deskripsi
     	]);
-    	return back()->with('status','Tag berhasil di tambahkan');
+        Alert::question($tag->nama_tag, 'Apakah yakin di tambahkan ?');
+    	return redirect('dashboard/tag');
     }
     public function edit($id)
     {

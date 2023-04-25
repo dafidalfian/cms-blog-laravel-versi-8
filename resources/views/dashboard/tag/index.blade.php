@@ -6,9 +6,9 @@
     <div class="card shadow">
       <div class="card-body">
       	<a href="{{url('dashboard/tag/create')}}" class="btn btn-primary btn-sm my-2">Tambah</a>
-        @if(session('status_ok'))
+        @if(session('status'))
           <div class="alert alert-success">
-            {{session('status_ok')}}
+            {{session('status')}}
           </div>
         @endif
         <div class="table-responsive">

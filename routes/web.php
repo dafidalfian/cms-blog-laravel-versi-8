@@ -86,6 +86,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('dashboard/pengaturan',[PengaturanController::class,'index']);
 	Route::post('dashboard/pengaturan/{id}', [PengaturanController::class,'ubah']);
+
+	Route::get('dashboard/barcode',[App\Http\Controllers\BarcodeController::class,'index']);
+	Route::get('dashboard/barcode/tambah',[App\Http\Controllers\BarcodeController::class,'tambah']);
+	Route::post('dashboard/barcode',[App\Http\Controllers\BarcodeController::class,'simpan']);
 });
 
 

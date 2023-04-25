@@ -43,14 +43,22 @@
           <li><a class="nav-link" href="{{url('dashboard/user')}}">Data User</a></li>
         </ul>
       </li>
+      @endcan
 
+      <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-barcode"></i> <span>View Barcode</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{{url('dashboard/barcode')}}">Show Barcode</a></li>
+        </ul>
+      </li>
+
+      @can('admin')
       <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cogs"></i> <span>Pengaturan Web</span></a>
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{url('dashboard/pengaturan')}}">Edit Pengaturan</a></li>
         </ul>
       </li>
-      
       @endcan
 
     </ul>
