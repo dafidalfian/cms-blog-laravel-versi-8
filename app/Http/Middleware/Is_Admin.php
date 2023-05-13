@@ -16,6 +16,9 @@ class Is_Admin
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!auth()->check() || !auth()->user()->tipe_akun){
+            abort(403);
+        }
         return $next($request);
     }
 }

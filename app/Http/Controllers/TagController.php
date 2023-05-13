@@ -12,8 +12,9 @@ class TagController extends Controller
 {
     //
     public function index(){
-    	$tag = Tags::latest()->get();
-    	return view('dashboard.tag.index', compact('tag'));
+    	return view('dashboard.tag.index',[
+            "tag" => Tags::latest()->get()
+        ]);
     }
     public function create()
     {

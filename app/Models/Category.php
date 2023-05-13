@@ -10,4 +10,14 @@ class Category extends Model
     use HasFactory;
     protected $table = "category";
     protected $guarded = [];
+
+    public function posts()
+    {
+    	return $this->hasMany(Posts::class);
+    }
+
+    public function getRouteKeyName()
+    {
+    	return 'slug';
+    }
 }

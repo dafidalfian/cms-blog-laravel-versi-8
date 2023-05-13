@@ -23,6 +23,14 @@
 						<label>Deskripsi</label>
 						<input type="text" name="deskripsi_situs" placeholder="Deskripsi situs ..." class="form-control" value="{{$set->deskripsi_situs}}">
 					</div>
+					<div class="form-group">
+						<label>Ganti icon</label>
+						<input type="file" name="icon" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Ganti Logo</label>
+						<input type="file" name="logo" class="form-control">
+					</div>
 					<button type="submit" class="btn btn-primary btn-sm">Save</button>
 				</form>
 			</div>

@@ -1,10 +1,10 @@
-<div class="main-sidebar bg-secondary sidebar-style-2">
+<div class="main-sidebar bg-white shadow sidebar-style-2">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="#" target="_blank">WEB</a>
+      <a href="/" target="_blank">WEB</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-      <a href="/">St</a>
+      <a href="/dashboard">St</a>
     </div>
     <ul class="sidebar-menu">
       <li class="menu-header">Dashboard</li>

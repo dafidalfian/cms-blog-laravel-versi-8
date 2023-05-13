@@ -29,12 +29,13 @@
 							<td>{{$hasil->nama}}</td>
 							<td class="bg-secondary p-2 text-center">
 								<strong>
-								<!-- {!! QrCode::margin(2)->color(255, 0, 0)->size(150)->generate($hasil->kode_nama) !!} <br>
+								{!! QrCode::margin(2)->color(255, 0, 0)->size(150)->generate($hasil->kode_nama) !!}
 								<br>
-								<img src="data:image/png;base64, {{ base64_encode(QrCode::margin(1)->size(200)->format('png')->merge(public_path('images/wedos.png'),0.3, true)->generate('hacker internasional')) }}">
+								Atau
 								<br>
+								<img src="data:image/png;base64, {{ base64_encode(QrCode::margin(2)->size(200)->format('png')->merge(public_path('images/wedos.png'),0.3, true)->generate('hacker internasional')) }}">
 								<br>
-								{{$hasil->kode_nama}} -->
+								{{$hasil->kode_nama}}
 								</strong>
 							</td>
 						</tr>

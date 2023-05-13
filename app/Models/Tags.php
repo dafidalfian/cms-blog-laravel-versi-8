@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tags extends Model
 {
     use HasFactory;
+    protected $table = 'tags';
     protected $guarded = [];
     public function posts(){
-    	return $this->belongsToMany('App\Models\Posts');
+    	return $this->belongsToMany(Posts::class, 'posts_tags', 'tags_id', 'posts_id');
     }
 }

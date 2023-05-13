@@ -57,7 +57,8 @@ class PostinganController extends Controller
     	$tangkapData = [
     		'judul' => $request->judul,
     		'category_id' => $request->category_id,
-    		'slug' => Str::slug($request->judul)
+    		'slug' => Str::slug($request->judul),
+            'isi_postingan' => $request->isi_postingan
     	];
     	if($request->file('foto_postingan')){
     		if($request->oldFoto){

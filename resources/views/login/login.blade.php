@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <form class="form-signin" method="post" action="/login">
+          <form class="form-signin" method="post" action="{{url('/login')}}">
             @csrf
 
             @if(session('success'))
@@ -44,6 +44,8 @@
               <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
               <label for="inputPassword">Password</label>
             </div>
+            
+            
 
             <div class="checkbox mb-3">
               <label>

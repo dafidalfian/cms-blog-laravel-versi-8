@@ -25,7 +25,7 @@ class BarcodeController extends Controller
     {
     	// 
         $logo = public_path("images/wedos.png");
-        dd($logo);
+        
     	BarcodeQR::create([
             'nama' => $request->nama,
             'kode_nama' => $request->nama

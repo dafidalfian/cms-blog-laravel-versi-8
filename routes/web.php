@@ -9,7 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PengaturanController;
-
+use App\Http\Controllers\BeritaController;
+use App\Models\Berita;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +24,15 @@ use App\Http\Controllers\PengaturanController;
 */
 
 // Route::get('/', function () {
-//     return view('index');
+//     return view('welcome');
 // });
-Route::get('/', function(){
-	return view('welcome');
-});
+
+Route::get('/',[BeritaController::class,'index']);
+Route::get('/baca/{slug}',[BeritaController::class,'baca']);
+Route::get('/list_post',[BeritaController::class,'data_post']);
+Route::get('/kategori/{category}',[BeritaController::class,'kategori_list']);
+Route::get('/tag/{tag}',[BeritaController::class,'list_tag']);
+
 // Login
 Route::get('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'cek_login']);
@@ -74,13 +79,14 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('dashboard/postingan/trash/rest/{posts}', [App\Http\Controllers\PostinganController::class,'kembalikan_postingan']);
 	Route::delete('dashboard/postingan/trash/rest/{posts}',[App\Http\Controllers\PostinganController::class,'hapus_permanen']);
 	// User Management
-	Route::get('dashboard/user',[UserController::class,'index']);
-	Route::get('dashboard/user/create',[UserController::class,'create']);
-	Route::post('dashboard/user',[UserController::class,'store']);
-	Route::get('dashboard/user/{user}/edit',[UserController::class,'edit']);
-	Route::patch('dashboard/user/{user}',[UserController::class,'update']);
-	Route::delete('dashboard/user/{user}',[UserController::class,'destroy']);
-	Route::delete('/dashboard/user/delete-multiple', [UserController::class, 'deleteMultiple'])->name('user.delete-multiple');
+	// Route::get('dashboard/user',[UserController::class,'index']);
+	// Route::get('dashboard/user/create',[UserController::class,'create']);
+	// Route::post('dashboard/user',[UserController::class,'store']);
+	// Route::get('dashboard/user/{user}/edit',[UserController::class,'edit']);
+	// Route::patch('dashboard/user/{user}',[UserController::class,'update']);
+	// Route::delete('dashboard/user/{user}',[UserController::class,'destroy']);
+
+	Route::resource('dashboard/user', UserController::class)->middleware('admin');
 	
 	
 
