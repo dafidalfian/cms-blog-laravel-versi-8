@@ -11,6 +11,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\BeritaController;
 use App\Models\Berita;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/baca/{slug}',[BeritaController::class,'baca']);
 Route::get('/list_post',[BeritaController::class,'data_post']);
 Route::get('/kategori/{category}',[BeritaController::class,'kategori_list']);
 Route::get('/tag/{tag}',[BeritaController::class,'list_tag']);
+Route::get('/about',[PageController::class,'about']);
 
 // Login
 Route::get('/login',[LoginController::class,'login'])->name('login')->middleware('guest');

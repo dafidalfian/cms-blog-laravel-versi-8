@@ -6,3 +6,20 @@
 	background-size: cover;
 	background-size: 300px;
 }
+
+#btn-pengajuan {
+  background-color: #fff;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: green;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: cyan;
+  }
+}
