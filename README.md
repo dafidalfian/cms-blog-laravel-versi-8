@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# Informasi CMS web project
+# Informasi CMS website Blog project
 Cms website ini saya bangun sendiri dengan bahasa pemrogramman PHP dengan menggunakan framework LARAVEL versi 8
 
 
