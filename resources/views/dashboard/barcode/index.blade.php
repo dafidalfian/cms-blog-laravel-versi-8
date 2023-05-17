@@ -33,7 +33,9 @@
 								<br>
 								Atau
 								<br>
-								<img src="data:image/png;base64, {{ base64_encode(QrCode::margin(2)->size(200)->format('png')->merge(public_path('images/wedos.png'),0.3, true)->generate('hacker internasional')) }}">
+								
+
+								<!-- <img src="data:image/png;base64, {{ base64_encode(QrCode::margin(2)->size(200)->format('png')->merge(public_path('images/logo_fb.png'),0.3, true)->generate('hacker internasional')) }}"> -->
 								<br>
 								{{$hasil->kode_nama}}
 								</strong>
