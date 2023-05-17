@@ -28,7 +28,7 @@ Setelah mendownload file project nya dan sudah di ekstrak maka anda harus menget
 ```bash
 composer install
 ``` 
-- buat database menggunakan nama: blog_v_2_1
+- buat database menggunakan nama: cms_blog_v8_2_1
 - setelah itu buka aplikasi text editor masing2 ( bebas )
 - cari file dengan nama .env.example lalu rename menjadi .env
 ketikkan perintah:
@@ -47,7 +47,7 @@ setelah url berhasil diakses anda juga bisa login ke dashboard system, untuk dat
 - Halaman Login http://localhost:8000/login
 - Login type akun Administrator:
 - Username/email: sdwi02467@gmail.com
-- Password: sdwi02467@gmail.com
+- Password: 12345678
 
 # Username & Password
 - Halaman Login http://localhost:8000/login
