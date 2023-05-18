@@ -55,7 +55,7 @@
 											<a href=""><span class="badge badge-success badge-xs mb-2"># {{$tag->nama_tag}}</span></a>
 										@endforeach
 									</td>
-									<td>{{$postingan->users->nama}}</td>
+									<td><a href="{{url('dashboard/postingan/'.$postingan->users->nama)}}">{{ucwords($postingan->users->nama)}}</a></td>
 									<td>
 										@if($postingan->foto_postingan)
 											<center><img src="{{asset('storage/'.$postingan->foto_postingan)}}" style="border:3px solid blue; border-radius: 10px; width:100px; height: 100px" class="mb-2 mt-2"></center>

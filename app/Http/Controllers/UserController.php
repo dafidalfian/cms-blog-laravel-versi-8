@@ -64,6 +64,9 @@ class UserController extends Controller
         ];
 
         $validateData = $request->validate($validasi);
+        if($request->has('password')){
+            $validateData['password'] = bcrypt($request->password);
+        }
 
         if($request->file('foto_pengguna')){
             if($request->foto_baru){

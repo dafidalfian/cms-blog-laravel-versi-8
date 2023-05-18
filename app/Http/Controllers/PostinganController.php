@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Tags;
 use App\Models\Posts;
@@ -18,6 +19,12 @@ class PostinganController extends Controller
 
     	$datapost = Posts::latest()->get();
     	return view('dashboard.postingan.index', compact('datapost'));
+    }
+    public function byuser($user)
+    {
+        $user = User::where('nama', $user)->firstOrFail();
+        $datapost = Posts::where('user_id', $user->id)->get();
+        return view('dashboard.postingan.index', compact('datapost'));
     }
     public function create()
     {

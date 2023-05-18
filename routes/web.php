@@ -72,6 +72,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::delete('dashboard/tag/{tags}',[App\Http\Controllers\TagController::class,'destroy']);
 	// Menu Postingan
 	Route::get('dashboard/postingan',[App\Http\Controllers\PostinganController::class,'index']);
+	Route::get('dashboard/postingan/{penulis}',[App\Http\Controllers\PostinganController::class,'byuser']);
 	Route::get('dashboard/postingan/create',[App\Http\Controllers\PostinganController::class, 'create']);
 	Route::post('dashboard/postingan',[App\Http\Controllers\PostinganController::class,'store']);
 	Route::get('dashboard/postingan/edit/{post}',[App\Http\Controllers\PostinganController::class, 'edit']);

@@ -38,9 +38,16 @@
         </form>
 
         <ul class="navbar-nav">
-          <li class="nav-item">
+          @if(auth()->check())
+           <li class="nav-item">
+            <a class="nav-link text-white font-weight-bold rounded bg-success" href="{{url('/dashboard')}}"><i class="fa fa-home"></i> Dashboard</a>
+          </li>
+           @else
+           <li class="nav-item">
             <a class="nav-link text-white font-weight-bold rounded" href="/login" id="btn-pengajuan"><i class="fa fa-sign-in"></i> Login</a>
           </li>
+           @endif
+          
         </ul>
       </div>
     </nav>
