@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2023 pada 06.18
+-- Waktu pembuatan: 19 Bulan Mei 2023 pada 00.41
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -181,10 +181,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `judul`, `category_id`, `isi_postingan`, `slug`, `foto_postingan`, `created_at`, `updated_at`, `deleted_at`, `user_id`) VALUES
-(1, 'Berita indonesia', 4, 'Kampungku merupakah sebuah wilayah yang sangat luas', 'berita-indonesia', 'postingan_foto/LdOQxDcXPwVIHIdvdjIXXhgBZhbbhay1rE53Y9HF.jpg', '2023-04-27 19:33:02', '2023-04-27 19:33:02', NULL, '1'),
-(2, 'Belajar agar bisa menjadi hacker terbaik', 5, 'Hacker merupakan orang yang ahli di budang komputer dan teknologi. selai itu hacker juga seorang yang mempunyai kemampuan lebih dari orang yang menguasai programmin dan juga jaringan komputer. maka tak heran jika memanfaatkan kemampuannya untuk mengeksploitasi suatu system den menemukan celah pada suatu sistem baik berupa sistem web maupun mobile.', 'belajar-agar-bisa-menjadi-hacker-terbaik', 'postingan_foto/uT5MCwTCgV6Zw3CjP4kttWMuxSQsigrOJFjWRADU.jpg', '2023-04-27 19:34:06', '2023-05-02 21:08:03', NULL, '1'),
-(3, 'Perang antara ukrasina yang tak kunjung selesai hingga sekarang', 1, 'Perang antara ukrasina  Perang antara ukrasina yang tak kunjung selesai hingga sekarangtak kunjung selesai hingga sekarangPerang antara ukrasina yang tak kunjung selesai h ingga sekarang', 'perang-antara-ukrasina-yang-tak-kunjung-selesai-hingga-sekarang', 'postingan_foto/ArBWgyf1deNyXJNwsl1Gja0X97YSUhJSyOpV3Goq.jpg', '2023-04-27 19:35:02', '2023-04-27 19:35:02', NULL, '1'),
-(4, 'Orang baik adalah orang tulus', 1, 'Orang baik adalah orang tulus yang merasa dirinya tidak pernah ada sifat buruk pada orang lain sehingga orang baik tadi selalu diremehkan karena sangking baiknya.', 'orang-baik-adalah-orang-tulus', 'postingan_foto/nrhnBiF7z8BjUnvUv7Jeolr0vDujlhSIKZducqbG.jpg', '2023-05-07 19:46:37', '2023-05-07 19:46:37', NULL, '1');
+(1, 'Berita indonesia', 4, 'Kampungku merupakah sebuah wilayah yang sangat luas', 'berita-indonesia', 'postingan_foto/VqLyYB9tinnCMh5HN5MVDbRMAq9s7Lgu7kcT1eOs.jpg', '2023-04-27 19:33:02', '2023-05-18 22:35:09', NULL, '1'),
+(2, 'Belajar agar bisa menjadi hacker terbaik', 5, 'Hacker merupakan orang yang ahli di budang komputer dan teknologi. selai itu hacker juga seorang yang mempunyai kemampuan lebih dari orang yang menguasai programmin dan juga jaringan komputer. maka tak heran jika memanfaatkan kemampuannya untuk mengeksploitasi suatu system den menemukan celah pada suatu sistem baik berupa sistem web maupun mobile.', 'belajar-agar-bisa-menjadi-hacker-terbaik', 'postingan_foto/P5iyQ061gqklPgtbYRuF1RMH5N8XoogBSu4AWSKj.jpg', '2023-04-27 19:34:06', '2023-05-18 22:36:15', NULL, '1'),
+(3, 'Perang antara ukrasina yang tak kunjung selesai hingga sekarang', 1, 'Perang antara ukrasina  Perang antara ukrasina yang tak kunjung selesai hingga sekarangtak kunjung selesai hingga sekarangPerang antara ukrasina yang tak kunjung selesai h ingga sekarang', 'perang-antara-ukrasina-yang-tak-kunjung-selesai-hingga-sekarang', 'postingan_foto/8R6F25bqPYCzniyzanuoEQLgfLXNVSu1INZbwwxo.jpg', '2023-04-27 19:35:02', '2023-05-18 22:36:45', NULL, '1'),
+(4, 'Orang baik adalah orang tulus', 1, 'Orang baik adalah orang tulus yang merasa dirinya tidak pernah ada sifat buruk pada orang lain sehingga orang baik tadi selalu diremehkan karena sangking baiknya.', 'orang-baik-adalah-orang-tulus', 'postingan_foto/PBaHAmUySaOM6nTewBLa0ABedPNBrExwHTiDtVpY.png', '2023-05-07 19:46:37', '2023-05-18 22:37:48', NULL, '1'),
+(5, 'pos bagas', 6, 'ini artikel bagas', 'pos-bagas', 'postingan_foto/m6ll5kMVhLJRR4VSPeSBD1pzA4Ysf1Vt1sLdBtkD.png', '2023-05-18 20:18:07', '2023-05-18 22:38:27', NULL, '2');
 
 -- --------------------------------------------------------
 
@@ -208,7 +209,8 @@ INSERT INTO `posts_tags` (`id`, `posts_id`, `tags_id`, `created_at`, `updated_at
 (3, 1, 4, NULL, NULL),
 (4, 2, 1, NULL, NULL),
 (8, 3, 2, NULL, NULL),
-(12, 4, 2, NULL, NULL);
+(12, 4, 2, NULL, NULL),
+(13, 5, 8, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -269,7 +271,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nama`, `verify_key`, `username`, `active`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `tipe_akun`, `id_google`, `facebook_id`, `foto_pengguna`) VALUES
 (1, 'Dafid A', NULL, 'masdafid123', NULL, 'sdwi02467@gmail.com', '2023-04-26 19:52:52', '$2y$10$HK389ogHwURtE4fVpLK9y.YCA4m2OVeGsoWhWE1IxtPCW4NSrTy.i', NULL, '2023-04-26 19:52:52', '2023-05-17 04:12:29', 1, '116594077536669847695', '1210401466517141', 'profile/iwEkLKXvBwfOu61dnFqf4zhp4PgyBHmD8zleu5Q0.jpg'),
-(2, 'bagas', NULL, 'xdark_404', NULL, 'bagas@gmail.com', '2023-04-26 19:54:25', '$2y$10$qbEGbIRSKMsbDmli8rjne.Uwfq2ZDtg2HcVuv9toN07X7XvY/Gj1y', NULL, '2023-04-26 19:54:25', '2023-04-26 20:45:22', 0, NULL, NULL, NULL),
+(2, 'bagas muzaky al amin', NULL, 'xdark_404', NULL, 'bagas@gmail.com', '2023-04-26 19:54:25', '$2y$10$9SQlt1Yu2oO0z3sM2.RINOVO6JCN6.gdgqxQ6jeLZ3kQReygXh32W', NULL, '2023-04-26 19:54:25', '2023-05-18 21:51:10', 1, NULL, NULL, NULL),
 (3, 'dafid alfian', NULL, NULL, NULL, 'id.dafidalfian@gmail.com', NULL, '$2y$10$g7goNPLOo0FnqiHu3ggtv.wqafu8y0eBc92cLJEriOrjzHIHa3an.', NULL, '2023-04-27 17:36:45', '2023-04-27 17:36:45', 0, '101103689470290779762', NULL, 'profile/101103689470290779762.jpg');
 
 --
@@ -376,13 +378,13 @@ ALTER TABLE `pengaturan`
 -- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `posts_tags`
 --
 ALTER TABLE `posts_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tags`
