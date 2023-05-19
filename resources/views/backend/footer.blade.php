@@ -32,17 +32,17 @@
 
   <!-- Alert -->
 
-  <script src="assets/modules/sweetalert/sweetalert.min.js"></script>
+  <script src="{{asset('assets/modules/sweetalert/sweetalert.min.js')}}"></script>
 
   <!-- Page Specific JS File -->
-  <script src="assets/js/page/modules-sweetalert.js"></script>
-
-  @stack('file_js')
+  <script src="{{asset('assets/js/page/modules-sweetalert.js')}}"></script>
 
   <!-- End Allert -->
   
   <!-- Template JS File -->
   <script src="{{asset('assets/js/scripts.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
+  <!-- Blok FIle JS -->
+  @stack('file_js')
 </body>
 </html>

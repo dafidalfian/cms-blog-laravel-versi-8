@@ -26,7 +26,7 @@
           <table class="table table-bordered">
             <thead class="table-primary">
               <tr>
-                <th>#</th>
+                <th width="5%">#</th>
                 <th>Nama Kategori</th>
                 <th>Deskripsi</th>
                 <th>Aksi</th>

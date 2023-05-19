@@ -30,7 +30,7 @@
                     <i class="fa fa-clock-o"></i> {{$hasil->created_at->isoFormat('dddd, D MMMM YYYY')}}</div>
                     <h5 class="card-title"><a href="{{url('baca/'.$hasil->slug)}}" class="text-success">{{$hasil->judul}}</a></h5>
                     <p class="card-text">{{$hasil->isi_postingan}}.</p>
-                    <i class="fa fa-pencil-square-o"></i> 
+                    <i class="fa fa-pencil-square-o"></i> {{$hasil->users->nama}}
                     <a href="{{url('baca/'.$hasil->slug)}}" class="float-right text-success mb-3">Selengkapnya ...</a>
                   </div>
                 </div>

@@ -16,7 +16,7 @@ class PageController extends Controller
     					'title' => $site->judul_situs,
     					'site' => $site,
     					'content' => 'home/about',
-    					'kategori' => $kategori =  Category::all()
+    					'kategori' => $kategori =  Category::all(),
     				);
 
     	return view('layout/wrapper', $data);

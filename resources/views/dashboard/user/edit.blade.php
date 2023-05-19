@@ -21,7 +21,7 @@
 						<label>Email</label>
 						<input type="email" name="email" value="{{$user->email}}" class="form-control" placeholder="Masukkan Email">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label>Type Akun</label>
 						<select class="form-control" name="tipe_akun">
 							<option value="1"
@@ -35,7 +35,28 @@
 							@endif
 							>Penulis</option>
 						</select>
-					</div>
+					</div> -->
+
+					<div class="form-group">
+                      <label class="d-block">Type Akun</label>
+                      <div class="form-check">
+                        <input class="form-check-input" name="tipe_akun" value="1" @if($user->tipe_akun == 1)
+							checked
+							@endif type="checkbox" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          Admin
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" name="tipe_akun" value="0" @if($user->tipe_akun == 0)
+							checked
+							@endif type="checkbox" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">
+                          Penulis
+                        </label>
+                      </div>
+                    </div>
+
 					<div class="form-group">
 						<label>Ubah Foto</label>
 						<br>

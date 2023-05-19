@@ -20,14 +20,30 @@
 						<label>Email</label>
 						<input type="email" name="email" class="form-control" placeholder="Masukkan Email">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label>Type Akun</label>
 						<select class="form-control" name="tipe_akun">
 							<option value="" holder>Pilih Type</option>
 							<option value="1">Admin</option>
 							<option value="0">Penulis</option>
 						</select>
-					</div>
+					</div> -->
+					<div class="form-group">
+                      <label class="d-block">Type Akun</label>
+                      <div class="form-check">
+                        <input class="form-check-input" name="tipe_akun" value="1" type="checkbox" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          Admin
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" name="tipe_akun" value="0" type="checkbox" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">
+                          Penulis
+                        </label>
+                      </div>
+                    </div>
+
 					<div class="form-group">
 						<label>Tambah Foto</label>
 						<input type="file" name="foto_pengguna" class="form-control">
