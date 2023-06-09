@@ -29,7 +29,7 @@
                   @if($hasil->deskripsi)
                     <td>{{$hasil->deskripsi}}</td>
                   @else 
-                    <td>No Tag</td>
+                    <td>No Deskripsi</td>
                   @endif
                   <td>
                     <form method="post" action="{{url('dashboard/tag/'.$hasil->id)}}">

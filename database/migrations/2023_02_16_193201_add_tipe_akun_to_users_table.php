@@ -15,7 +15,8 @@ class AddTipeAkunToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->boolean('tipe_akun')->default(0);
+            $table->enum('tipe_akun', ['superuser', 'admin', 'karyawan'])->default('karyawan');
+            // $table->boolean('tipe_akun')->default(0);
         });
     }
 

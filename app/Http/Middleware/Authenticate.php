@@ -19,3 +19,6 @@ class Authenticate extends Middleware
         }
     }
 }
+
+// Website Kampung merupakan website yang di rancang untuk memberikan informasi menarik seputar terkini baik budaya berita atau ber edukasi dan belajar
+// Website Kampung merupakan website yang di rancang untuk memberikan suatu informasi yang menarik seputar terkini baik budaya berita atau ber edukasi dan belajar teknologi baru

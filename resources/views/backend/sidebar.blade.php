@@ -34,17 +34,20 @@
           <li><a class="nav-link" href="{{url('dashboard/tag')}}">Data Tag</a></li>
         </ul>
       </li>
-      @can('admin')
       <li class="menu-header">Administrator</li>
-      <!-- Menu User -->
+      <!-- Menu User Management -->
+      @auth
+      @if(auth()->user()->tipe_akun === 'superuser')
       <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>User Management</span></a>
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{url('dashboard/user')}}">Data User</a></li>
         </ul>
       </li>
-      @endcan
+      @endif
+      @endauth
 
+      <!-- Menu Barcode -->
       <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-barcode"></i> <span>View Barcode</span></a>
         <ul class="dropdown-menu">
@@ -52,14 +55,14 @@
         </ul>
       </li>
 
-      @can('admin')
+      <!-- Menu Pengaturan -->
       <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cogs"></i> <span>Pengaturan Web</span></a>
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{url('dashboard/pengaturan')}}">Edit Pengaturan</a></li>
         </ul>
       </li>
-      @endcan
+      
 
     </ul>
 

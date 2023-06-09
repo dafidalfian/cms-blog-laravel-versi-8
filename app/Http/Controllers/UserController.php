@@ -60,7 +60,6 @@ class UserController extends Controller
             'username' => 'required',
             'email' => 'required',
             'tipe_akun' => 'required',
-            'password' => 'required'
         ];
 
         $validateData = $request->validate($validasi);

@@ -51,10 +51,12 @@
 									<td>{{$hasil->username}}</td>
 									<td>{{$hasil->email}}</td>
 									<td>
-										@if($hasil->tipe_akun >= 1)
-											<span class="badge badge-success">Admin</span>
+										@if($hasil->tipe_akun =='superuser')
+											<span class="badge badge-success">SuperUser</span>
+										@elseif($hasil->tipe_akun =='admin')
+											<span class="badge badge-warning">Admin</span>
 										@else
-											<span class="badge badge-secondary">Penulis</span>
+											<span class="badge badge-secondary">Karyawan</span>
 										@endif
 									</td>
 									<td>

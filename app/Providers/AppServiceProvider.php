@@ -27,9 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        Gate::define('admin', function(User $user){
+        Paginator::useBootstrap();
+
+        Gate::define('superuser', function(User $user){
             return $user->tipe_akun;
         });
-        Paginator::useBootstrap();
     }
 }

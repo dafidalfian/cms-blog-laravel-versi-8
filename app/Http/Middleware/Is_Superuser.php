@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Is_Admin
+class Is_Superuser
 {
     /**
      * Handle an incoming request.

@@ -40,7 +40,7 @@
 					<div class="form-group">
                       <label class="d-block">Type Akun</label>
                       <div class="form-check">
-                        <input class="form-check-input" name="tipe_akun" value="1" @if($user->tipe_akun == 1)
+                        <input class="form-check-input" name="tipe_akun" value="admin" @if($user->tipe_akun == 'admin')
 							checked
 							@endif type="checkbox" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
@@ -48,11 +48,11 @@
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="tipe_akun" value="0" @if($user->tipe_akun == 0)
+                        <input class="form-check-input" name="tipe_akun" value="karyawan" @if($user->tipe_akun == 'karyawan')
 							checked
 							@endif type="checkbox" id="defaultCheck3">
                         <label class="form-check-label" for="defaultCheck3">
-                          Penulis
+                          Karyawan
                         </label>
                       </div>
                     </div>
