@@ -10,7 +10,10 @@
     "require": {
         "php": "^7.3",
         "anhskohbo/no-captcha": "^3.5",
+<<<<<<< HEAD
         "barryvdh/laravel-dompdf": "^2.0",
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",

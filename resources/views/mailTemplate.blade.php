@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+<<<<<<< HEAD
     <style type="text/css">
       table {
         border-collapse: collapse;
@@ -63,6 +64,9 @@
         background-color: rgba(0, 0, 0, 0.05);
       }
     </style>
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
     <title>Login - aplikasi nilai online!</title>
   </head>
@@ -74,6 +78,7 @@
     <p>
       Berikut ini adalah data anda: 
     </p>
+<<<<<<< HEAD
     <table class="table table-bordered table-hover table-striped">
       <thead class="thead-dark">
         <th>Nama</th>
@@ -102,6 +107,21 @@
       </h3>
       <hr>
       <h3>Atau salin link di bawah ini.</h3>
+=======
+    <table>
+      <tr>
+        <td>Username</td>
+        <td>:</td>
+        <td>{{$details['username']}}</td>
+      </tr>
+    </table>
+    <center>
+      <h3>
+        Copy link di bawah ini untuk melakukan verifikasi alamat email anda
+      </h3>
+      <b style="color: blue">{{$details['url']}}</b>
+      <hr>
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
       <div class="card">
         <a href="{{$details['url']}}" class="btn btn-primary">{{$details['url']}}</a>
       </div>

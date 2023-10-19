@@ -66,7 +66,11 @@
 					</div>
 					<div class="form-group">
 						<label>Password</label>
+<<<<<<< HEAD
 						<input type="password" name="password" class="form-control">
+=======
+						<input type="password" name="password" class="form-control" value="{{$user->password}}">
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 					</div>
 					<button type="submit" class="btn btn-primary">Update</button>
 				</form>

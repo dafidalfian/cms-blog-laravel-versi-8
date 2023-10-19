@@ -71,6 +71,7 @@ public function list_tag($slug)
 
 
 
+<<<<<<< HEAD
     Kode auth default
 
     Route::group(['middleware' => 'auth'], function(){
@@ -123,6 +124,8 @@ public function list_tag($slug)
 });
 
 
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     kode auth 3 multiuser
 
     Route::group(['middleware' => 'auth'], function () {

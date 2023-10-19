@@ -10,6 +10,7 @@
 					@csrf
 					<div class="form-group">
 						<label>Nama Lengkap</label>
+<<<<<<< HEAD
 						<input type="text" name="nama" class="form-control" value="{{@old('nama')}}" placeholder="Masukkan nama" required autofocus>
 					</div>
 					<div class="form-group">
@@ -22,6 +23,17 @@
 						@error('email')
 							<p>{{$message}}</p>
 						@enderror
+=======
+						<input type="text" name="nama" class="form-control" placeholder="Masukkan nama" required autofocus>
+					</div>
+					<div class="form-group">
+						<label>Username</label>
+						<input type="text" name="username" class="form-control" placeholder="Masukkan Username">
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input type="email" name="email" class="form-control" placeholder="Masukkan Email">
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 					</div>
 					<!-- <div class="form-group">
 						<label>Type Akun</label>

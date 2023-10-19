@@ -36,7 +36,11 @@
             </div>
 
             <div class="form-label-group">
+<<<<<<< HEAD
               <input type="email" name="email" value="{{old('email')}}" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+=======
+              <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
               <label for="inputEmail">Email address</label>
             </div>
 
@@ -47,6 +51,7 @@
             
             
 
+<<<<<<< HEAD
             <div class="checkbox mb-3 d-flex justify-content-between">
               <label>
                 <input type="checkbox" value="remember-me"> Remember me
@@ -54,6 +59,12 @@
               <a href="{{url('reset-password')}}">
                 <small>Lupa kata sandi?</small>
               </a>
+=======
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 

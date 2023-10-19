@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "f0847f04e4328cc1dd0166b594b1087a",
+=======
+    "content-hash": "911783fcbf54810d0a75f468c864bd2f",
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -181,6 +185,7 @@
             "time": "2022-12-07T17:46:57+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "barryvdh/laravel-dompdf",
             "version": "v2.0.1",
             "source": {
@@ -258,6 +263,8 @@
             "time": "2023-01-12T15:12:49+00:00"
         },
         {
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             "name": "brick/math",
             "version": "0.9.3",
             "source": {
@@ -610,6 +617,7 @@
             "time": "2022-02-28T11:07:21+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "dompdf/dompdf",
             "version": "v2.0.3",
             "source": {
@@ -672,6 +680,8 @@
             "time": "2023-02-07T12:51:48+00:00"
         },
         {
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             "name": "dragonmantank/cron-expression",
             "version": "v3.3.2",
             "source": {
@@ -2112,6 +2122,7 @@
             "time": "2022-04-15T14:02:14+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "masterminds/html5",
             "version": "2.8.1",
             "source": {
@@ -2179,6 +2190,8 @@
             "time": "2023-05-10T11:58:31+00:00"
         },
         {
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             "name": "monolog/monolog",
             "version": "2.8.0",
             "source": {
@@ -2651,6 +2664,7 @@
             "time": "2022-01-27T09:35:39+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "phenx/php-font-lib",
             "version": "0.5.4",
             "source": {
@@ -2741,6 +2755,8 @@
             "time": "2022-09-06T12:16:56+00:00"
         },
         {
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             "name": "phpoption/phpoption",
             "version": "1.9.0",
             "source": {
@@ -3562,6 +3578,7 @@
             "time": "2023-02-15T07:13:11+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "sabberworm/php-css-parser",
             "version": "8.4.0",
             "source": {
@@ -3615,6 +3632,8 @@
             "time": "2021-12-11T13:40:54+00:00"
         },
         {
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             "name": "simplesoftwareio/simple-qrcode",
             "version": "4.2.0",
             "source": {

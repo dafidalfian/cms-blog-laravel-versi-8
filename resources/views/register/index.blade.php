@@ -10,7 +10,11 @@
     <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css">
   </head>
   <body>
+<<<<<<< HEAD
     <form class="form-signin" method="post" action="/register" enctype="multipart/form-data">
+=======
+    <form class="form-signin" method="post" action="/register">
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
       @csrf
 
       @if(session('success'))
@@ -45,12 +49,15 @@
         <label for="Password">Password</label>
       </div>
 
+<<<<<<< HEAD
       <div class="form-label">
         <label>Upload foto anda</label>
         <input type="file" name="foto_pengguna" class="form-control">
       </div>
       <br>
 
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
@@ -67,12 +74,20 @@
 
       <div class="row g-sm-2 text-white">
         <div class="col-6">
+<<<<<<< HEAD
           <a class="btn btn-block btn-social btn-danger" href="{{route('google.login')}}">
+=======
+          <a class="btn btn-block btn-social btn-danger" href="#">
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             <span class="fab fa-facebook"></span> Google
           </a>
         </div>
         <div class="col-6">
+<<<<<<< HEAD
           <a class="btn btn-block btn-social btn-primary" href="{{route('facebook.login')}}">
+=======
+          <a class="btn btn-block btn-social btn-primary" href="#">
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             <span class="fab fa-twitter"></span> Facebook
           </a>                                
         </div>

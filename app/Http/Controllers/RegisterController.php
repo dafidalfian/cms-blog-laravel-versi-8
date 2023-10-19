@@ -27,11 +27,14 @@ class RegisterController extends Controller
     		'email' => 'required|email:dns',
     		'password' => 'required|min:3|max:50'
     	]);
+<<<<<<< HEAD
 
         if($request->file('foto_pengguna')){
             $cek['foto_pengguna'] = $request->file('foto_pengguna')->store('profile');
         }
 
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     	$cek['password'] = bcrypt($request->password);
         $cek['verify_key'] = $str;
         $details = [
@@ -39,8 +42,12 @@ class RegisterController extends Controller
             'username' => $request->username,
             'website' => "Website blog",
             'datetime' => date('Y-m-d H:i:s'),
+<<<<<<< HEAD
             'url' => $request->getHttpHost().'/registrasi/accounts/verifikasi/'.$str,
             'email' => $request->email
+=======
+            'url' => $request->getHttpHost().'/registrasi/accounts/verifikasi/'.$str
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         ];
         Mail::to($request->email)->send(new MailSend($details));
     	User::create($cek);
@@ -55,7 +62,11 @@ class RegisterController extends Controller
         if($keyCheck){
             $user = User::where('verify_key', $verify_key)->update([
                 'email_verified_at' => now()]);
+<<<<<<< HEAD
             return response("Verifikasi akun berhasil, akun anda sudah aktif ...", 200)
+=======
+            return response("verifikasi berhasil, akun anda sudah aktif ...", 200)
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
                ->header('Content-Type', 'text/html')
                ->header('Refresh', '5;url=/login');
         } else{

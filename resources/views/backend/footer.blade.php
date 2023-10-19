@@ -42,9 +42,14 @@
   <!-- Template JS File -->
   <script src="{{asset('assets/js/scripts.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
+<<<<<<< HEAD
   <script src="{{asset('assets/js/sw/sweetalert2.all.min.js')}}"></script>
   <script src="{{asset('assets/js/sw/myscript.js')}}"></script>
   <!-- Blok FIle JS -->
   @stack('js')
+=======
+  <!-- Blok FIle JS -->
+  @stack('file_js')
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 </body>
 </html>

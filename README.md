@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
 # Informasi CMS website Blog project
 Cms website ini saya bangun sendiri dengan bahasa pemrogramman PHP dengan menggunakan framework LARAVEL versi 8
 
@@ -50,6 +40,7 @@ setelah url berhasil diakses anda juga bisa login ke dashboard system, untuk dat
 - Login type akun SuperUser:
 - Username/email: sdwi02467@gmail.com
 - Password: 1234
+- Password: 12345678
 
 # Username & Password
 - Halaman Login http://localhost:8000/login
@@ -65,7 +56,6 @@ setelah url berhasil diakses anda juga bisa login ke dashboard system, untuk dat
 
 # Catatan
 - Jika ada error pada sebuah program ini silahkan bisa hubungi kami menggunakan kontak/informasi di atas tersebut terimakasih."# websiteblogpribadi" 
-=======
 # websiteblogsendiri
 ini merupakan project website blog saya pribadi yang dibangun menggunakan bahasa php framework laravel versi 8
->>>>>>> ca3a89fedfa8d61d81502e8a3b491de11e6bd027
+- Jika ada error pada sebuah program ini silahkan bisa hubungi kami menggunakan kontak/informasi di atas tersebut terimakasih.

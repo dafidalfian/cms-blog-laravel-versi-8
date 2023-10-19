@@ -11,12 +11,18 @@ class UserController extends Controller
     //
     public function index()
     {
+<<<<<<< HEAD
         $data_user = User::where('tipe_akun', '!=', 'superuser')
                           ->whereIn('tipe_akun', ['admin', 'karyawan'])
                           ->latest()->get();
         return view('dashboard.user.index', compact('data_user'));
     }
 
+=======
+    	$data_user = User::all();
+    	return view('dashboard.user.index', compact('data_user'));
+    }
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     public function create()
     {
     	return view('dashboard.user.create');
@@ -62,6 +68,7 @@ class UserController extends Controller
             'nama' => 'required',
             'username' => 'required',
             'email' => 'required',
+<<<<<<< HEAD
             'tipe_akun' => 'required'
         ];
         $validateData = $request->validate($validasi);
@@ -71,6 +78,14 @@ class UserController extends Controller
         } else {
             // Jika password tidak diberikan, gunakan password yang lama
             unset($validateData['password']); // Hapus password dari data validasi
+=======
+            'tipe_akun' => 'required',
+        ];
+
+        $validateData = $request->validate($validasi);
+        if($request->has('password')){
+            $validateData['password'] = bcrypt($request->password);
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         }
 
         if($request->file('foto_pengguna')){

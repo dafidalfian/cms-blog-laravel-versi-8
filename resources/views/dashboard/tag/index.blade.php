@@ -1,13 +1,25 @@
 @extends('backend.head')
+<<<<<<< HEAD
 @section('title','Tag')
+=======
+@section('title','- Tag')
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 @section('isi')
 <div class="row">
   <div class="col">
     <div class="card shadow">
       <div class="card-body">
       	<a href="{{url('dashboard/tag/create')}}" class="btn btn-primary btn-sm my-2">Tambah</a>
+<<<<<<< HEAD
         <div class="flash" tampil-pesan="<?php echo session('flash')?>"></div>
        
+=======
+        @if(session('status'))
+          <div class="alert alert-success">
+            {{session('status')}}
+          </div>
+        @endif
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead class="table-primary">
@@ -29,12 +41,20 @@
                     <td>No Deskripsi</td>
                   @endif
                   <td>
+<<<<<<< HEAD
 
                     <form method="POST" action="{{ url('dashboard/tag/' . $hasil->id) }}" id="form-delete-{{ $hasil->id }}">
                         @csrf
                         @method('DELETE')
                         <a href="{{url('dashboard/tag/edit',$hasil->id)}}" class="btn btn-primary">edit</a>
                         <button type="button" class="btn btn-danger tombol" data-id="{{ $hasil->id }}">hapus</button>
+=======
+                    <form method="post" action="{{url('dashboard/tag/'.$hasil->id)}}">
+                      {{csrf_field()}}
+                      @method('delete')
+                      <a href="{{url('dashboard/tag/edit',$hasil->id)}}" class="btn btn-primary">edit</a>
+                      <button type="submit" class="btn btn-danger">hapus</button>
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
                     </form>
                   </td>
                 </tr>
@@ -47,6 +67,7 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 
 @push('js')
 
@@ -86,4 +107,6 @@ $('.tombol').on('click', function(e){
 
 </script>
 @endpush
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 @endsection

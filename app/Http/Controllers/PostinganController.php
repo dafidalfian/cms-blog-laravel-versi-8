@@ -10,8 +10,11 @@ use App\Models\Category;
 use App\Models\Tags;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 use Dompdf\Dompdf;
 use Barryvdh\DomPDF\Facade\Pdf;
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
 class PostinganController extends Controller
 {
@@ -114,6 +117,7 @@ class PostinganController extends Controller
         $post->tags()->detach();
         return back();
     }
+<<<<<<< HEAD
 
     public function cetak()
     {
@@ -121,6 +125,8 @@ class PostinganController extends Controller
         $pdf = PDF::loadview('dashboard/postingan/cetak_pdf', ['data' => $data]);
         return $pdf->download('daftar-pdf.pdf');
     }
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 //     public function hapus_permanen($id)
 // {
 //     $postingan = Posts::withTrashed()->where('id',$id)->first();

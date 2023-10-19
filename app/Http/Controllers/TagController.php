@@ -28,8 +28,13 @@ class TagController extends Controller
     		'slug' => Str::slug($request->nama_tag),
     		'deskripsi' => $request->deskripsi
     	]);
+<<<<<<< HEAD
         $message = '<strong>' . $request->nama_tag . '</strong> ditambahkan.';
     	return redirect('dashboard/tag')->with('flash', $message);
+=======
+        Alert::question($tag->nama_tag, 'Apakah yakin di tambahkan ?');
+    	return redirect('dashboard/tag');
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     }
     public function edit($id)
     {
@@ -43,6 +48,7 @@ class TagController extends Controller
             'slug' => Str::slug($request->nama_tag),
             'deskripsi' => $request->deskripsi
         ]);
+<<<<<<< HEAD
         $message = '<strong>' . $request->nama_tag . '</strong> diubah.';
         return back()->with('flash', $message);
     }
@@ -51,5 +57,13 @@ class TagController extends Controller
         Tags::destroy($tags->id);
         $message = '<strong>' . $request->nama_tag . '</strong> dihapus.';
         return back()->with('flash', $message);
+=======
+        return back()->with('status','Tag berhasil di ubah');
+    }
+    public function destroy(Tags $tags)
+    {
+        Tags::destroy($tags->id);
+        return back()->with('status_ok','Tag berhasil di hapus');
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     }
 }

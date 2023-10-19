@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Sep 2023 pada 19.45
+-- Waktu pembuatan: 09 Jun 2023 pada 21.09
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -124,8 +124,6 @@ CREATE TABLE `pengaturan` (
   `judul_situs` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deskripsi_situs` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `icon_situs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `logo_situs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `logo_utama_situs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -134,8 +132,8 @@ CREATE TABLE `pengaturan` (
 -- Dumping data untuk tabel `pengaturan`
 --
 
-INSERT INTO `pengaturan` (`id`, `judul_situs`, `deskripsi_situs`, `icon_situs`, `logo_situs`, `logo_utama_situs`, `created_at`, `updated_at`) VALUES
-(1, 'WebKampung Untuk Indonesia', 'Ubah Sendiri', 'icon/YxgVoWOEkSUQKLAENqiEFEj7eCPlBJEeXLq5cntC.png', NULL, NULL, '2023-09-05 17:40:00', '2023-09-05 17:41:20');
+INSERT INTO `pengaturan` (`id`, `judul_situs`, `deskripsi_situs`, `icon_situs`, `created_at`, `updated_at`) VALUES
+(1, 'WebKampung Untuk Indonesia', 'Ubah Sendiri', NULL, '2023-06-09 19:07:20', '2023-06-09 19:07:20');
 
 -- --------------------------------------------------------
 
@@ -214,9 +212,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `verify_key`, `username`, `active`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `tipe_akun`, `id_google`, `facebook_id`, `foto_pengguna`) VALUES
-(1, 'Dafid Alfian', NULL, 'masdafid', NULL, 'sdwi02467@gmail.com', '2023-09-05 17:40:00', '$2y$10$.2FualVq2YMAT/uUf/BKSOKf2S3UXWUrELvfbFh2MgPCe./koRh2G', NULL, '2023-09-05 17:40:00', '2023-09-05 17:40:52', 'superuser', '116594077536669847695', '1210401466517141', 'profile/h3OAgTl6cpBVByVBTfkhLf9QFOFHhMhJSaffTebq.jpg'),
-(2, 'Bagas Muzaky', NULL, 'masbagas', NULL, 'bagas@gmail.com', '2023-09-05 17:40:00', '$2y$10$VqdJemHt7JNTb1RDXHg7Ou5BHSmIA5YNL00x8DX/6Tib1/putRO0a', NULL, '2023-09-05 17:40:00', '2023-09-05 17:40:00', 'admin', '32433243241', '3456475476', NULL),
-(3, 'Sinta Novita', NULL, 'sintanovita', NULL, 'sinta@gmail.com', '2023-09-05 17:40:00', '$2y$10$KVWDE9C6pCFKau8q9YtnRuT8lyU6u4SxHzXepq5bm.WM4EJGgFJTG', NULL, '2023-09-05 17:40:00', '2023-09-05 17:40:00', 'karyawan', '3214324324', '2314234', NULL);
+(1, 'Dafid Alfian', NULL, 'masdafid', NULL, 'sdwi02467@gmail.com', '2023-06-09 19:07:20', '$2y$10$SpgHvFcNCtDRxcoDl7RHa.LAP6Ti3oN4ZQm42.U8xODIoNIiwNG72', NULL, '2023-06-09 19:07:20', '2023-06-09 19:07:20', 'superuser', '116594077536669847695', '1210401466517141', NULL),
+(2, 'Bagas Muzaky', NULL, 'masbagas', NULL, 'bagas@gmail.com', '2023-06-09 19:07:20', '$2y$10$sttraPGvmS7lrCnE/mWt0.NzBBsBR03X.xAVroMO/sPMYefqum/Le', NULL, '2023-06-09 19:07:20', '2023-06-09 19:07:20', 'admin', '32433243241', '3456475476', NULL),
+(3, 'Sinta Novita', NULL, 'sintanovita', NULL, 'sinta@gmail.com', '2023-06-09 19:07:20', '$2y$10$6eIJ3Zo4N6e1SNs1AfprceOD5/VrI84zXLg1jCoioF3O.XBtm8Wue', NULL, '2023-06-09 19:07:20', '2023-06-09 19:07:20', 'karyawan', '3214324324', '2314234', NULL);
 
 --
 -- Indexes for dumped tables

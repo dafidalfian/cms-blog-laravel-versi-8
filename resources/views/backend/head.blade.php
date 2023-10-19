@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 use Illuminate\Support\Facades\DB;
@@ -6,14 +7,20 @@ $set = DB::table('pengaturan')->first();
 
 ?>
 
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+<<<<<<< HEAD
   <title>{{config('app.name')}} - @yield('title')</title>
   <link rel="icon" href="<?php echo asset('storage/'. $set->icon_situs) ?>" sizes="16x16" type="image/png">
 
+=======
+  <title>{{config('app.name')}} @yield('title')</title>
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="<?=url('assets/modules/bootstrap/css/bootstrap.min.css');?>">
@@ -29,8 +36,12 @@ $set = DB::table('pengaturan')->first();
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/components.css')}}">
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{asset('assets/js/sw/sweetalert2.min.css')}}">
   @stack('css')
+=======
+  @stack('file_css')
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 <!-- Start GA -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script> -->
 <!-- <script>

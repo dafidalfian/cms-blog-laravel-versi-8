@@ -6,10 +6,14 @@
 	<div class="col-12">
 		<div class="card shadow card-primary">
 			<div class="card-header d-flex justify-content-between align-items-center">
+<<<<<<< HEAD
 			    <div class="card-body">
 			    	<a href="{{url('dashboard/postingan/create')}}" class="btn btn-primary mb-2">Tambah</a>
 			    	<a href="{{url('dashboard/postingan/aksi/cetak_pdf')}}" target="_blank" class="btn btn-danger mb-2">Export PDF</a>
 			    </div>
+=======
+			    <a href="{{url('dashboard/postingan/create')}}" class="btn btn-primary mb-2">Tambah</a>
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 			    <form class="form-inline mb-2">
 			      <input class="form-control" type="search" placeholder="Cari data">
 			    </form>

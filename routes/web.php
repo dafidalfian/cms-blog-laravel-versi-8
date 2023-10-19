@@ -10,11 +10,16 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\BeritaController;
+<<<<<<< HEAD
 use App\Http\Controllers\PostinganController;
 use App\Http\Controllers\BarcodeController;
 use App\Models\Berita;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AkunSuperController;
+=======
+use App\Models\Berita;
+use App\Http\Controllers\PageController;
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +37,12 @@ use App\Http\Controllers\AkunSuperController;
 // });
 
 Route::get('/',[BeritaController::class,'index']);
+<<<<<<< HEAD
 Route::get('/coba', function(){
     return view('coba');
 });
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 Route::get('/baca/{slug}',[BeritaController::class,'baca']);
 Route::get('/list_post',[BeritaController::class,'data_post']);
 Route::get('/kategori/{category}',[BeritaController::class,'kategori_list']);
@@ -44,7 +52,10 @@ Route::get('/about',[PageController::class,'about']);
 // Login
 Route::get('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'cek_login']);
+<<<<<<< HEAD
 Route::get('/reset-password',[LoginController::class,'lupa_sandi']);
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 Route::post('/logout',[LoginController::class,'logout']);
 // Register
 Route::get('/register',[RegisterController::class,'index'])->middleware('guest');
@@ -60,28 +71,49 @@ Route::get('auth/google/callback',[GoogleController::class,'handleCallback'])->n
 Route::get('auth/facebook', [FacebookController::class,'redirect_facebook'])->name('facebook.login');
 Route::get('auth/facebook/callback',[FacebookController::class,'handlefacebook'])->name('facebook.callback');
 
+<<<<<<< HEAD
 // Backend System
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     // Menu Kategori
+<<<<<<< HEAD
+=======
+    Route::group(['middleware' => 'role:superuser,admin'], function () {
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         Route::get('dashboard/kategori', [CategoryController::class, 'index']);
         Route::get('dashboard/kategori/create', [CategoryController::class, 'create']);
         Route::post('dashboard/kategori', [CategoryController::class, 'store']);
         Route::get('dashboard/kategori/edit/{category}', [CategoryController::class, 'edit']);
         Route::patch('dashboard/kategori/oke/{category}', [CategoryController::class, 'update']);
         Route::delete('dashboard/kategori/{category}', [CategoryController::class, 'destroy']);
+<<<<<<< HEAD
 
     // Menu Tags
+=======
+    });
+
+    // Menu Tags
+    Route::group(['middleware' => 'role:superuser,admin'], function () {
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         Route::get('dashboard/tag', [\App\Http\Controllers\TagController::class, 'index']);
         Route::get('dashboard/tag/create', [\App\Http\Controllers\TagController::class, 'create']);
         Route::post('dashboard/tag', [\App\Http\Controllers\TagController::class, 'store']);
         Route::get('dashboard/tag/edit/{id}', [\App\Http\Controllers\TagController::class, 'edit']);
         Route::patch('dashboard/tag/{tags}', [\App\Http\Controllers\TagController::class, 'update']);
         Route::delete('dashboard/tag/{tags}', [\App\Http\Controllers\TagController::class, 'destroy']);
+<<<<<<< HEAD
 
     // Menu Postingan
+=======
+    });
+
+    // Menu Postingan
+    Route::group(['middleware' => 'role:superuser,admin,karyawan'], function () {
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
         Route::get('dashboard/postingan', [PostinganController::class, 'index']);
         Route::get('dashboard/postingan/create', [PostinganController::class, 'create']);
         Route::post('dashboard/postingan', [PostinganController::class, 'store']);
@@ -92,6 +124,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('dashboard/postingan/trash/rest/{posts}', [PostinganController::class, 'kembalikan_postingan']);
         Route::delete('dashboard/postingan/trash/rest/{posts}', [PostinganController::class, 'hapus_permanen']);
         Route::get('dashboard/postingan/{penulis}', [PostinganController::class, 'byuser']);
+<<<<<<< HEAD
         Route::get('dashboard/postingan/aksi/cetak_pdf', [PostinganController::class,'cetak']);
 
     // User Management
@@ -104,11 +137,24 @@ Route::group(['middleware' => 'auth'], function () {
     	Route::get('dashboard/pengaturan', [PengaturanController::class,'index']);
     	Route::post('dashboard/pengaturan/{id}',[PengaturanController::class,'ubah']);
     });
+=======
+    });
+
+    // User Management
+    Route::group(['middleware' => 'role:superuser'], function () {
+        Route::get('dashboard/user', [UserController::class, 'index']);
+    });
+
+    // Pengaturan
+    Route::get('dashboard/pengaturan', [PengaturanController::class, 'index']);
+    Route::post('dashboard/pengaturan/{id}', [PengaturanController::class, 'ubah']);
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
     // Barcode
     Route::get('dashboard/barcode', [BarcodeController::class, 'index']);
     Route::get('dashboard/barcode/tambah', [BarcodeController::class, 'tambah']);
     Route::post('dashboard/barcode', [BarcodeController::class, 'simpan']);
+<<<<<<< HEAD
     // My Akun
     Route::group(['middleware' => 'role:superuser'], function(){
         Route::get('dashboard/my/akun', [AkunSuperController::class,'index']);
@@ -140,3 +186,6 @@ Route::group(['middleware' => 'auth'], function () {
 // Route::delete('/dashboard/user/{id}',[UserController::class,'destroy']);
 
 
+=======
+});
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7

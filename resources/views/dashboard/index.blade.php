@@ -12,7 +12,10 @@
   </div>
   </div>
 <!--  -->
+<<<<<<< HEAD
 <div class="flash" tampil-pesan="<?php echo session('flash')?>"></div>
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
 <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -76,6 +79,7 @@
               </div>
             </div>                  
           </div>
+<<<<<<< HEAD
 
 @push('js')
 
@@ -93,4 +97,6 @@
 
 @endpush
 
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 @endsection

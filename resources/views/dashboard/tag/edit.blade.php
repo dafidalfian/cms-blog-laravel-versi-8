@@ -7,7 +7,15 @@
 		<div class="card shadow card-primary">
 			<div class="card-body">
 				<h3>Edit data</h3>
+<<<<<<< HEAD
 				<div class="flash" tampil-pesan="<?php echo session('flash') ?>"></div>
+=======
+				@if(session('status'))
+					<div class="alert alert-success">
+						{{session('status')}}
+					</div>
+				@endif
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 				<form method="post" action="/dashboard/tag/{{$edit_tag->id}}">
 					{{csrf_field()}}
 					@method('patch')

@@ -163,7 +163,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+<<<<<<< HEAD
         Barryvdh\DomPDF\ServiceProvider::class,
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
         /*
          * Package Service Providers...
@@ -230,7 +233,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+<<<<<<< HEAD
         'PDF' => Barryvdh\DomPDF\Facade::class,
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
 
     ],
 

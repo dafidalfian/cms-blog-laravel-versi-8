@@ -30,7 +30,11 @@ class LoginController extends Controller
             if($user->email_verified_at !== null) {
                 Auth::login($user);
                 $request->session()->regenerate();
+<<<<<<< HEAD
                 return redirect()->intended('/dashboard')->with('flash','login');
+=======
+                return redirect()->intended('/dashboard');
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
             } else {
                 return view('batas');
             }
@@ -38,11 +42,14 @@ class LoginController extends Controller
 
         return back()->with('login_gagal','Login gagal !');
     }
+<<<<<<< HEAD
 
     public function lupa_sandi()
     {
         return view('login.reset-password');
     }
+=======
+>>>>>>> f018c561e7241d03d442c8fd27b2a604320221f7
     
 
     public function logout()
