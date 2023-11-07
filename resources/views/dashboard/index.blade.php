@@ -1,4 +1,5 @@
 @extends('backend.head')
+@section('title','Utama')
 @section('isi')
 
 

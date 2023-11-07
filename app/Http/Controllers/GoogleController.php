@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Mail\VerifikasiUlangMail;
+use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use Socialite;
 
@@ -20,6 +22,7 @@ class GoogleController extends Controller
     }
     public function handleCallback(Request $request, User $user)
     {
+        $str = Str::random(100);
         $user = Socialite::driver('google')->user();
         $finduser = User::where('id_google', $user->getId())->first();
         
@@ -43,7 +46,27 @@ class GoogleController extends Controller
             $newUser->save();
 
             Auth::login($newUser);
-            return redirect()->intended('dashboard')->with('flash','berhasil login dengan google');
+            return redirect()->intended('dashboard')->with('flash','Anda berhasil daftar dengan akun google');
         }
     }
+    public function kirim_link_untuk_verifikasi_ulang(Request $request)
+    {
+        // Logika untuk mengirim email verifikasi ulang
+        $kode = Str::random(10);
+        $verificationLink = [
+            'nama' => auth()->user()->nama,
+            'email' => auth()->user()->email,
+            'url' => $request->getHttpHost().'/dashboard/proses_verifikasi'.$kode,
+            'datetime' => date('Y-m-d H:i:s')
+        ];
+        Mail::to(auth()->user()->email)->send(new VerifikasiUlangMail($verificationLink));
+
+        return back()->with('flash', 'Link verifikasi ulang berhasil dikirim ke email Anda.');
+    }
+
+    public function verifikasi_selesai()
+    {
+        // 
+    }
+
 }
