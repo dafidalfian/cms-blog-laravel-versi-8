@@ -269,10 +269,20 @@ $set = DB::table('pengaturan')->first();
           </div>
           @if(Auth::user()->email_verified_at === null)
             <!-- <p class="text-center">Akun Anda belum terverifikasi <a href="" class="text-white badge badge-danger">klik</a> untuk aktivasi akun.</p> -->
-            <form method="post" action="{{url('dashboard/kirim_link_verifikasi')}}">
+            <form method="post" id="verifikasiForm" action="{{ url('dashboard/kirim_link_verifikasi') }}">
               @csrf
-              <p class="text-center">Akun Anda belum terverifikasi <button type="submit" class="btn btn-danger rounded-5">klik</button> untuk aktifasi akun.</p>
-            </form>
+              <p class="text-center">
+                  Akun Anda belum terverifikasi
+                  <button type="button" id="verifikasiButton" class="btn btn-danger rounded-5" onclick="kirimVerifikasi()">Klik</button>
+                  <span id="verifikasiMessage"></span>
+              </p>
+          </form>
+
+
+          @else
+            @if(session('flash'))
+              <p class="alert alert-success text-center">{{session('flash')}}</p>
+            @endif
           @endif
           @yield('isi')
         </section>

@@ -10,6 +10,9 @@
     <p>http://{{$verificationLink['url']}}</p>
     <p>Nama : {{$verificationLink['nama']}}</p>
     <p>Email : {{$verificationLink['email']}}</p>
+    <p>Foto :<br>
+    	<img src="{{ $verificationLink['foto_pengguna'] }}" alt="Foto Pengguna">
+    </p>
     <p>Waktu: {{$verificationLink['datetime']}}</p>
     <p>Jika Anda tidak meminta verifikasi ulang akun, Anda bisa mengabaikan pesan ini.</p>
 </body>

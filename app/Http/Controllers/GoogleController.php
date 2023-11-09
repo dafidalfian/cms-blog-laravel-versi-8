@@ -52,21 +52,29 @@ class GoogleController extends Controller
     public function kirim_link_untuk_verifikasi_ulang(Request $request)
     {
         // Logika untuk mengirim email verifikasi ulang
-        $kode = Str::random(10);
+        $kode = auth()->user()->verify_key;
         $verificationLink = [
             'nama' => auth()->user()->nama,
             'email' => auth()->user()->email,
-            'url' => $request->getHttpHost().'/dashboard/proses_verifikasi'.$kode,
+            'foto_pengguna' => asset('storage/'.auth()->user()->foto_pengguna),
+            'url' => $request->getHttpHost().'/dashboard/proses_verifikasi/'.$kode,
             'datetime' => date('Y-m-d H:i:s')
         ];
         Mail::to(auth()->user()->email)->send(new VerifikasiUlangMail($verificationLink));
-
         return back()->with('flash', 'Link verifikasi ulang berhasil dikirim ke email Anda.');
     }
 
-    public function verifikasi_selesai()
+    public function verifikasi_selesai($kode_verifikasi)
     {
-        // 
+        $keyCheck = User::select('verify_key')->where('verify_key',$kode_verifikasi)->exists();
+
+        if($keyCheck){
+            $user = User::where('verify_key', $kode_verifikasi)->update([
+                'email_verified_at' => now()]);
+            return back()->with('flash','Akun berhasil diverifikasi');
+        } else{
+            return "Gagal diverifikasi";
+        }
     }
 
 }

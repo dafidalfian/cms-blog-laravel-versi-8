@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::post('/dashboard/kirim_link_verifikasi', [GoogleController::class, 'kirim_link_untuk_verifikasi_ulang']);
-    Route::get('dashboard/proses_verifikasi',[GoogleController::class,'verifikasi_selesai']);
+    Route::get('dashboard/proses_verifikasi/{kode_verifikasi}',[GoogleController::class,'verifikasi_selesai']);
 
     // Menu Kategori
         Route::get('dashboard/kategori', [CategoryController::class, 'index']);
